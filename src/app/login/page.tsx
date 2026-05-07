@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/shared/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { Input } from "@/shared/components/ui/input";
 import { Label } from "@/shared/components/ui/label";
 import { useAuth } from "@/features/auth/hooks/useAuth";
@@ -25,15 +24,27 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <CardTitle>Admin Login</CardTitle>
-          <CardDescription>Enter your credentials to access the dashboard</CardDescription>
-        </CardHeader>
-        <CardContent>
+    <main className="flex min-h-screen items-center justify-center bg-[var(--color-surface-muted)] p-4">
+      <div className="w-full max-w-sm">
+        <div className="mb-6 text-center">
+          <span className="block text-xl font-black uppercase tracking-tight text-zinc-950">
+            Hahaha Corp
+          </span>
+          <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+            Admin
+          </span>
+        </div>
+
+        <div className="rounded-md border border-[var(--color-border)] bg-white p-6">
+          <div className="mb-5">
+            <h1 className="h-page">Sign in</h1>
+            <p className="mt-1 text-sm text-[var(--color-ink-muted)]">
+              Use your admin credentials to continue.
+            </p>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               <Label htmlFor="username">Email</Label>
               <Input
                 id="username"
@@ -42,9 +53,11 @@ export default function LoginPage() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 disabled={loading}
+                required
               />
             </div>
-            <div className="space-y-2">
+
+            <div className="space-y-1.5">
               <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
@@ -53,15 +66,26 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={loading}
+                required
               />
             </div>
-            {error && <p className="text-sm text-destructive">{error}</p>}
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Logging in..." : "Login"}
+
+            {error && (
+              <p className="text-sm text-[var(--color-destructive)]">{error}</p>
+            )}
+
+            <Button
+              type="submit"
+              variant="pill"
+              size="pill"
+              className="w-full"
+              disabled={loading}
+            >
+              {loading ? "Signing in…" : "Sign in"}
             </Button>
           </form>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </main>
   );
 }
