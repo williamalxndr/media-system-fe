@@ -14,11 +14,15 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        pill: "rounded-full bg-zinc-950 text-white hover:bg-zinc-800",
+        "pill-outline":
+          "rounded-full border border-zinc-300 bg-transparent text-zinc-900 hover:bg-zinc-100",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
+        pill: "h-10 px-5 text-sm",
         icon: "h-9 w-9",
       },
     },
