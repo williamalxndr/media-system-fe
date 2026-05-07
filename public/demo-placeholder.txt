@@ -1,0 +1,5 @@
+Secure Media Access Demo
+
+This is a placeholder downloadable file for MVP demos.
+The backend returned a demo fallback URL because object storage signing
+was unavailable in local development.
