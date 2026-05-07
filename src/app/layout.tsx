@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import "./globals.css";
+import { Toaster } from "@/shared/components/ui/toaster";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Secure Media Access",
-  description: "Time-restricted private media access"
+  description: "Time-restricted private media access",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }
