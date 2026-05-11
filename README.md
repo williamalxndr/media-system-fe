@@ -16,3 +16,13 @@ nvm use
 npm install
 npm run dev
 ```
+
+## API Base URL
+
+Set the backend URL in `frontend/.env.local` or `frontend/.env`:
+
+```bash
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
+```
+
+All frontend API calls go through `src/shared/lib/apiFetch.ts`, which reads this value from `src/shared/config/api.ts`.
