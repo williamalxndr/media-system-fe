@@ -4,7 +4,7 @@ import { Toaster } from "@/shared/components/ui/toaster";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Secure Media Access",
+  title: "HAHAHACORP",
   description: "Time-restricted private media access",
 };
 
